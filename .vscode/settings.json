@@ -1,0 +1,23 @@
+{
+  // Git Auto-Fetch: Automatically fetch from remote every 3 minutes
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180,
+
+  // Git Auto-Refresh: Automatically refresh Git status
+  "git.autorefresh": true,
+
+  // Git Post-Commit Command: Automatically push after commit
+  "git.postCommitCommand": "push",
+
+  // Show push/pull status in the status bar
+  "git.showPushSuccessNotification": true,
+
+  // Auto-save files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // Git confirmation settings (optional - set to false for auto operations)
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.enableCommitSigning": false
+}
