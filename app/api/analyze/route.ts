@@ -87,6 +87,11 @@ Content: ${content}`
 
   } catch (error) {
     console.error('Analysis error:', error);
-    return Response.json({ error: 'Analysis failed' }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return Response.json({
+      error: 'Analysis failed',
+      details: errorMessage,
+      stack: error instanceof Error ? error.stack : undefined
+    }, { status: 500 });
   }
 }
