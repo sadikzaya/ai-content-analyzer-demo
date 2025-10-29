@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       .insert({ content_id: contentItem.id, status: 'processing' });
 
     const message = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-3-5-sonnet-20241022',
       max_tokens: 500,
       messages: [{
         role: 'user',
@@ -72,7 +72,7 @@ Content: ${content}`
       .insert({
         content_id: contentItem.id,
         processing_time_ms: processingTime,
-        model_used: 'claude-sonnet-4.5',
+        model_used: 'claude-3-5-sonnet-20241022',
         tokens_used: message.usage.input_tokens + message.usage.output_tokens
       });
 
